@@ -51,6 +51,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # Upload the build output directory to GitHub Pages (path to dist folder)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' 
+          
       # Step to deploy the files to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
